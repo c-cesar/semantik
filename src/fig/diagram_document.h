@@ -1,16 +1,13 @@
 // Thomas Nagy 2013-2018 GPLV3
 
-%: ifndef DIAGRAM_WIDGET_H
+#ifndef DIAGRAM_WIDGET_H
 #define DIAGRAM_WIDGET_H
 
-%: inc\
-lude "con.\
-h"
+#include "con.h"
 
-#inc\
-lude <QFrame>
+#include <QFrame>
 
- %: include<QUrl>
+#include <QUrl>
 
 class box_view;
 class sem_mediator;

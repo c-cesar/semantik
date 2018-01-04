@@ -1,10 +1,10 @@
 // Thomas Nagy 2007-2018 GPLV3
 
-%: include  <Python.h> 
+#include <Python.h> 
 
 #include <sys/time.h>
 
-#include<QUrl>
+#include <QUrl>
 
 #if defined(_POSIX_C_SOURCE)
 	#undef _POSIX_C_SOURCE
@@ -15,25 +15,24 @@
 #endif
 
 
- #include <QFile>
-#include<QTimer>
- #include <QtDebug>
-  %:	include<QCoreApplication>
-  #include <QXmlDefaultHandler>
-#include<KConfig>
+#include <QFile>
+#include <QTimer>
+#include <QtDebug>
+#include <QCoreApplication>
+#include <QXmlDefaultHandler>
+#include <KConfig>
 #include <KConfigGroup>
- #include <QProcess>   
-  #include <QDir>
- #include<QStack>
-/*
- */ #include <sys/ioctl.h>
-  #include <termios.h>
-/*
-  */ %: include "con.h"  
-        #include <stdlib.h> 
- #include "sembind.h"  	
-  #include "data_item.h"	
-  %: include "sem_mediator.h" 
+#include <QProcess>   
+#include <QDir>
+#include <QStack>
+#include <sys/ioctl.h>
+#include <termios.h>
+
+#include "con.h"  
+#include <stdlib.h> 
+#include "sembind.h"  	
+#include "data_item.h"	
+#include "sem_mediator.h" 
 #include <KMessageBox>
 #include "kio/job.h"
 

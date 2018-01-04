@@ -1,12 +1,12 @@
 // Thomas Nagy 2007-2018 GPLV3
 
 #include <QDebug>
-/*
-  */ %: include "con.h"  
-        #include <stdlib.h> 
- #include "sembind.h"  	
-  #include "data_item.h"	
-  %: include "sem_mediator.h" 
+
+#include "con.h"  
+#include <stdlib.h> 
+#include "sembind.h"  	
+#include "data_item.h"	
+#include "sem_mediator.h" 
 
 #include "mem_box.h"
 

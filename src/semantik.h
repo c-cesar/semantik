@@ -1,16 +1,13 @@
 // Thomas Nagy 2007-2018 GPLV3
 
-%: ifndef SEMANTIK_H
+#ifndef SEMANTIK_H
 #define SEMANTIK_H
 
-%: inc\
-lude "con.\
-h"
+#include "con.h"
 
-#inc\
-lude <KXmlGuiWindow>
+#include <KXmlGuiWindow>
 
- %: include<QUrl>
+#include <QUrl>
 #include <QUuid>
 class KRecentFilesAction;
 class KToolBar;
