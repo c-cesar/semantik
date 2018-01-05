@@ -1370,14 +1370,14 @@ QPixmap sem_mediator::getThumb(int id)
 
 bool sem_mediator::save_and_load_picture(const QUrl& i_sPath, int id)
 {
-	QStringList sp = i_sPath.path().split(".");
+	QStringList sp = i_sPath.fileName().split(".");
 	if (sp.size() < 2) return false;
 	QString dest = QString(m_sTempDir+"/img-%1.%2").arg(QString::number(id)).arg(sp[sp.size()-1]);
 
-
-	KJob *l_oJob = KIO::file_copy(i_sPath, QUrl(dest), KIO::Overwrite);
+	KJob *l_oJob = KIO::file_copy(i_sPath, QUrl::fromLocalFile(dest), -1, KIO::Overwrite);
 	bool l_bOk = l_oJob->exec();
-	if (l_bOk) {
+
+	if (!l_bOk) {
 		goto cleanup;
 	}
 
@@ -1389,7 +1389,7 @@ bool sem_mediator::save_and_load_picture(const QUrl& i_sPath, int id)
 	return true;
 
 	cleanup:
-		KJob *l_oDelJob = KIO::file_delete(QUrl(dest));
+		KJob *l_oDelJob = KIO::file_delete(QUrl::fromLocalFile(dest));
 		l_oDelJob->exec();
 		return false;
 }
